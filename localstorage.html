@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body>
+Email Id:<input type="text" id="txtEmail" /><br />
+Password:<input type="password" id="txtPassword" /><br />
+<input type="submit" id="btnSubmit" value="Submit" /><br />
+<input type="submit" id="btnFetch" value="Fetch" />
+<script src="jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+ $("#btnSubmit").click(function(){
+ if($("#txtEmail").val()==""){ 
+ alert("Please enter email");
+}
+else if($("#txtPassword").val()==""){ 
+alert("Please enter password");
+}
+else{
+  localStorage.setItem("email", $("#txtEmail").val());
+  LocalStorage.setItem("password", $("#txtPassword").val());
+  alert("Form Submitted Successfully");
+  $("#txtEmail").val(""); 
+  $("#txtPassword").val("");
+}
+});
+  $("#btnFetch").click(function({
+  var email=localStorage.getItem("email"); 
+ var passwordl=localStorage.getItem("password"); 
+ alert("Email Id: "+email+"\nPassword: "+password1);
+ }); 
+});
+
+</script>
+</body>
+</html>
